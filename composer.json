@@ -4,15 +4,12 @@
     "description": "Project template for Drupal 8 sites built with the CS Gov distribution.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupalcz/csgov": "dev-8.x-1.x",
         "cweagans/composer-patches": "^1.6.0",
-        "drupal-composer/drupal-scaffold": "^2.0.0"
+        "drupal-composer/drupal-scaffold": "^2.0.0",
+        "drupalcz/csgov": "dev-8.x-1.x"
     },
     "require-dev": {
         "drush/drush": "^9.0"
-    },
-    "config": {
-        "process-timeout": 0
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
@@ -44,20 +41,41 @@
             "npm-asset"
         ]
     },
-    "repositories": {
-        "drupal": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "assets": {
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         },
-        "csgov": {
-            "type": "vcs",
-            "url": "https://github.com/drupalcz/csgov"
+        {
+            "type": "github",
+            "url": "https://github.com/Drupalcz/csgov",
+	    "no-api": true
+        },
+	{
+	   "type": "github",
+           "url": "https://github.com/Drupalcz/csgov-theme",
+           "no-api": true
+	},
+	{
+            "type": "package",
+            "package": {
+                "name": "nk-o/jarallax",
+                "version": "1.10.7",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/nk-o/jarallax/archive/v1.10.7.zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                },
+                "type": "drupal-library"
+            }
         }
-    },
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
