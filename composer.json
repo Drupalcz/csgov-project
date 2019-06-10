@@ -49,16 +49,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "github",
-            "url": "https://github.com/Drupalcz/csgov",
-	    "no-api": true
-        },
-	{
-	   "type": "github",
-           "url": "https://github.com/Drupalcz/csgov-theme",
-           "no-api": true
 	},
 	{
             "type": "package",
