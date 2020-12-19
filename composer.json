@@ -39,7 +39,15 @@
         "installer-types": [
             "bower-asset",
             "npm-asset"
-        ]
+        ],
+        "drupal-scaffold": {
+          "allowed-packages": [
+            "drupal/core"
+          ],
+          "locations": {
+            "web-root": "web/"
+          }
+        }
     },
     "repositories": [
         {
