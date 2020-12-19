@@ -1,4 +1,4 @@
 name: csgov
 recipe: drupal8
 config:
-  webroot: docroot 
+  webroot: web 
