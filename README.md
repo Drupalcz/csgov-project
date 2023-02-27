@@ -4,7 +4,7 @@ This is a Composer-based installer for the [CS Gov](https://github.com/Drupalcz/
 
 * Create new project using composer
 ```
-$ composer create-project drupalcz/csgov-project:"3.x-dev" MY_PROJECT
+$ composer create-project drupalcz/csgov-project:"1.0.0" MY_PROJECT
 ```
 
 * Change to web/themes/contrib/csgov_theme and follow instructions from its README file.
