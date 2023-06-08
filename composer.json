@@ -6,7 +6,7 @@
   "require": {
     "cweagans/composer-patches": "^1.6.5",
     "drupal/core-composer-scaffold": "^9.1",
-    "drupalcz/csgov": "1.0.0"
+    "drupalcz/csgov": "1.0.1"
   },
   "require-dev": {
     "drush/drush": "^11.0"
