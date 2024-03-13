@@ -1,15 +1,13 @@
 {
   "name": "drupalcz/csgov-project",
   "type": "project",
-  "description": "Project template for Drupal 9 sites built with the CS Gov distribution.",
+  "description": "Project template for Drupal 10 sites built with the CSGOV distribution.",
   "license": "GPL-2.0-or-later",
   "require": {
-    "cweagans/composer-patches": "^1.6.5",
-    "drupal/core-composer-scaffold": "^9.1",
-    "drupalcz/csgov": "1.x"
+    "drupalcz/csgov": "2.x"
   },
-  "require-dev": {
-    "drush/drush": "^11.0"
+  "conflict": {
+    "drupal/drupal": "*"
   },
   "extra": {
     "composer-exit-on-patch-failure": true,
@@ -19,9 +17,7 @@
         "type:drupal-core"
       ],
       "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
+        "type:drupal-library"
       ],
       "web/modules/contrib/{$name}": [
         "type:drupal-module"
@@ -32,14 +28,19 @@
       "web/themes/contrib/{$name}": [
         "type:drupal-theme"
       ],
-      "drush/contrib/{$name}": [
+      "drush/Commands/contrib/{$name}": [
         "type:drupal-drush"
+      ],
+      "web/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "web/profiles/custom/{$name}": [
+        "type:drupal-custom-profile"
+      ],
+      "web/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
       ]
     },
-    "installer-types": [
-      "bower-asset",
-      "npm-asset"
-    ],
     "drupal-scaffold": {
       "allowed-packages": [
         "drupal/core"
@@ -57,21 +58,6 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "nk-o/jarallax",
-        "version": "1.10.7",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/nk-o/jarallax/archive/v1.10.7.zip"
-        },
-        "require": {
-          "composer/installers": "~1.0"
-        },
-        "type": "drupal-library"
-      }
     }
   ],
   "minimum-stability": "dev",
@@ -85,13 +71,18 @@
     ]
   },
   "config": {
+    "preferred-install": {
+      "drupal/core": "dist"
+    },
     "allow-plugins": {
       "composer/installers": true,
-      "cweagans/composer-patches": true,
       "drupal/core-composer-scaffold": true,
       "drupal/core-project-message": true,
-      "oomphinc/composer-installers-extender": true,
-      "drupal/console-extend-plugin": true
-    }
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "cweagans/composer-patches": true,
+      "oomphinc/composer-installers-extender": true
+    },
+    "sort-packages": true
   }
 }
